@@ -4,13 +4,12 @@ operations = ["addition", "subtraction", "division", "multiplication", "exponent
 def get_numbers_and_operation():
 	"""
 	Asks user to specify a operation to perform and two numbers.
-
-    Returns:
+	Returns:
         (str) operation - name of the operation from the list
         (int) x - first number
         (int) y - secons number
-    """
-    # We get user's input for city
+	"""
+	# We get user's input for city
 	print("Hello! Welcome to Katya\'s calculator! Please choose the operation you want to use: addition (or 1), subtraction (2), division (3), multiplication (4), exponentiation(5): ")
 	while True:
 		operation = input('Please enter the name of operation or operation\'s number: ')
@@ -21,18 +20,14 @@ def get_numbers_and_operation():
 
 	# We get user's input for the numbers
 	
-
+			
 	while True:
-        	try:
-        	x = input('Enter the first number: '))
-			y = input('Enter the second number: '))
-        	break
-        	except ValueError: 
-        	print('\nPlease enter a number. Both float or integer will work!')
-        	break
-
-
-	print("Hurray!")
+		x = input('Enter the first number: ')
+		y = input('Enter the second number: ')
+		if isinstance(x,(float, int)) and isinstance(y, (float, int)):
+			break
+		else:
+		    print("Please enter the number! Both intereger and float types will work")	
 
 	return operation, x, y
 
@@ -81,25 +76,13 @@ def calculator(operation, x, y):
 	
 
 def main():
-    while True:
-        operation, x, y = get_numbers_and_operation()
-
-        calculator(operation, x, y)
-
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
+	while True:
+		operation, x, y = get_numbers_and_operation()
+		calculator(operation, x, y)
+		
+		restart = input('\nWould you like to restart? Enter yes or no.\n')
+		if restart.lower() != 'yes':
+			break
 
 if __name__ == "__main__":
 	main()
-
-    
-
-
-
-
-
-
-
-
-
