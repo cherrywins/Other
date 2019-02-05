@@ -20,8 +20,17 @@ def get_numbers_and_operation():
 			print("Please enter the operation or operation's number from the list above")
 
 	# We get user's input for the numbers
-	x = input('Enter the first number: '))
-	y = input('Enter the second number: '))
+	
+
+	while True:
+        	try:
+        	x = input('Enter the first number: '))
+			y = input('Enter the second number: '))
+        	break
+        	except ValueError: 
+        	print('\nPlease enter a number. Both float or integer will work!')
+        	break
+
 
 	print("Hurray!")
 
@@ -30,8 +39,8 @@ def get_numbers_and_operation():
 
 
 def addition(x, y):
-    summ = x+y
-    print("The sum: " + str(summ))
+	summ = x+y
+	print("The sum: " + str(summ))
 
 
 def subtraction(x,y):
