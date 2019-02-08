@@ -3,7 +3,6 @@ operations = ["addition", "subtraction", "division", "multiplication", "exponent
 
 def get_numbers_and_operation():
 	"""
-	Asks user to specify a operation to perform and two numbers.
 	Returns:
         (str) operation - name of the operation from the list
         (int) x - first number
